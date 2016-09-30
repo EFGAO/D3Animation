@@ -4,8 +4,8 @@ Project link: ["VisA to VisB to VisC"](http://cs573-16f.github.io/03-Animation/i
 
 # Team
 
-- Lane Harrison, codementum
-- Hane Larrison, modecentum
+- Jingjun Zhang, zhangjingjun
+- Yifei Gao, EFGAO
 
 # Technical Achievements
 
