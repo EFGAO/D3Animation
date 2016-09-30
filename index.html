@@ -1,19 +1,82 @@
-<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
+<title>Animated Transitions</title>
+	<link href="https://fonts.googleapis.com/css?family=Exo+2|Poiret+One" rel="stylesheet">
+	<script src="https://d3js.org/d3.v4.min.js"></script>
 
-<style>
-</style>
+	<style type="text/css">
+		body {
+			background-color: #ffffff;
+      		color: #000000;
+      		font-size: large;
+      		font-family: 'Exo 2', sans-serif;
+      		width: auto;
+      		height: auto;
+      		margin-left: auto;
+      		margin-right: auto;
+		}
+		div {
+			background-color: #ffffff;
+      		color: #000000;
+      		font-size: large;
+      		font-family: 'Exo 2', sans-serif;
+      		width: auto;
+      		height: auto;
+      		text-align: center;
+      		margin-left: auto;
+      		margin-right: auto;
+		}
+		table {
+      		width: auto;
+      		margin-left: auto;
+      		margin-right: auto;
+ 	   	}
+    	.cell {
+      		width: auto;
+      		height: auto;
+      		border: solid;
+      		border-color: gray;
+    	}
+    	.celltitle {
+      		width: auto;
+      		height: auto;
+      		text-align: center;
+    	}
+    	#mainFrame {
+      		margin-left: auto;
+      		margin-right: auto;
+    	}
+	</style>
 
 <body>
-  <h1> Animated Transitions </h1>
+  	<h1 font-family='Exo 2' align=center> Animated Transitions </h1>
+	<div id = "mainFrame">
+		<table>
+			<tr>
+		  		<td><div id = "div1", class="cell"></div></td>
+			</tr>
+			<tr>
+		  		<td><p class="celltitle">Circles</p></td>
+			</tr>
+			<tr>
+		  		<td><div id = "div2", class="cell"></div></td>
+			</tr>
+			<tr>
+				<td><p class="celltitle">Lines</p></td>
+			</tr>
+		</table>
+	</div>
 </body>
 
 <script>
-  console.log(d3); // test if d3 is loaded
+  	console.log(d3); // test if d3 is loaded
 
-  d3.csv('fruit.csv', function(err, d) {
-    if(err) console.log(err);
-    // start here!
-    console.log(d);
-  });
+  	var testsvg = d3.select("#div2").append("svg").attr("width", 800).attr("height", 600);
+
+  	testsvg.append("rect").attr("rx", 200).attr("ry", 200).attr("x", 200).attr("y", 100).attr("width", 400).attr("height", 400).attr("fill", "gray").transition().attr("rx", 0).attr("ry", 0).duration(2000);
+
+  	d3.csv('fruit.csv', function(err, d) {
+    	if(err) console.log(err);
+    	// start here!
+    	console.log(d);
+  	});
 
 </script>
